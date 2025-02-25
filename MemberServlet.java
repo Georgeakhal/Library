@@ -54,6 +54,9 @@ public class MemberServlet extends HttpServlet {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
+        
+        writer.print("<h1>Members</h1>");
+        writer.print("<p></p>");
 
         for (Member member : members) {
             writer.println("<p> id: " + member.getId() + ", name: " + member.getName() + ", email: " + member.getEmail() + ", join date: " + member.getJoin_date() +"</p>");
@@ -76,9 +79,6 @@ public class MemberServlet extends HttpServlet {
         }
 
         Member member = new Member(id, name, email, LocalDate.now());
-
-        writer.print("<h1>Members</h1>");
-        writer.print("<p></p>");
 
         try {
             membersDao.addMember(member);
