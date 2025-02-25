@@ -19,7 +19,7 @@ public class BorrowingsDao {
     private final String GET_BY_CODE = "SELECT * FROM public.\"Borrowings\" WHERE \"bookCode\" = ?";
     private final String GET_ALL = "SELECT * FROM public.\"Borrowings\"";
     private final String ADD = "INSERT INTO public.\"Borrowings\" (\"bookCode\", \"memberId\", \"borrowDate\") VALUES (?, ?, ?)";
-    private final String UPDATE = "UPDATE public.\"Borrowings\" SET \"returnDate\" = ? WHERE \"bookCode\" = ? AND \"returnDate\" = null";
+    private final String UPDATE = "UPDATE public.\"Borrowings\" SET \"returnDate\" = ? WHERE \"bookCode\" = ? AND \"returnDate\" IS NULL";
     private final String DELETE = "DELETE FROM public.\"Borrowings\" WHERE \"code\" = ?";
 
     public ArrayList<Borrowing> getBorrowings() throws SQLException {
