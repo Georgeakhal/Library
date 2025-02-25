@@ -1,0 +1,24 @@
+CREATE TABLE IF NOT EXISTS public."Books"
+(
+    code integer NOT NULL,
+    title character varying(50) COLLATE pg_catalog."default",
+    author character varying(50) COLLATE pg_catalog."default",
+    CONSTRAINT "Books_pkey" PRIMARY KEY (code)
+);
+CREATE TABLE IF NOT EXISTS public."Borrowings"
+(
+    "bookCode" integer NOT NULL,
+    "memberId" character varying COLLATE pg_catalog."default" NOT NULL,
+    "borrowDate" date NOT NULL,
+    "returnDate" date,
+    CONSTRAINT "Borrowings_pkey" PRIMARY KEY ("bookCode", "memberId", "borrowDate")
+);
+CREATE TABLE IF NOT EXISTS public."Members"
+(
+    id character varying COLLATE pg_catalog."default" NOT NULL,
+    name character varying(100) COLLATE pg_catalog."default",
+    email character varying COLLATE pg_catalog."default",
+    join_date date,
+    CONSTRAINT "Members_pkey" PRIMARY KEY (id),
+    CONSTRAINT "Members_email_key" UNIQUE (email)
+);
