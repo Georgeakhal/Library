@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <title>Hello World</title>
+</head>
+<body>
+<h1>Borrowings</h1>
+<br/>
+<form method="post" action="http://localhost:8080/BorrowingServlet" target="dummyframe">
+    Book Code:
+    <input type="number" name="bookCode" value="0"><br/>
+    Member Id:
+    <input type="text" name="memberId" value=""><br/>
+
+    <input type="submit" value="Submit">
+</form>
+
+<p></p>
+<h1>Return Book</h1>
+<form method="post" action="http://localhost:8080/ReturningServlet" target="dummyframe">
+    Book Code:
+    <input type="number" name="bookCode" value="0"><br/>
+
+    <input type="submit" value="Submit">
+</form>
+
+<iframe name="dummyframe" id="dummyframe" style="display: none;"></iframe>
+</body>
+</html>
