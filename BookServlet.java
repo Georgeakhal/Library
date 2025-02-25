@@ -48,6 +48,9 @@ public class BookServlet extends HttpServlet {
             throw new RuntimeException(e);
         }
 
+        writer.print("<h1>Books</h1>");
+        writer.print("<p></p>");
+
         for (Book book : books) {
             writer.println("<p> code: " + book.getCode() + ", title: " + book.getTitle() + ", author: " + book.getAuthor() +"</p>");
         }
@@ -87,9 +90,6 @@ public class BookServlet extends HttpServlet {
         }
 
         Book book = new Book(intCode, title, author);
-
-        writer.print("<h1>Books</h1>");
-        writer.print("<p></p>");
 
         try {
             booksDao.addBook(book);
